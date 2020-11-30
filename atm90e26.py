@@ -22,7 +22,7 @@ class ATM90E26_SPI:
     val - value to write (if any)
     '''
 
-    def comm_atm90(self, RW, address, val):
+    def comm_atm90(self, RW, address, val = 0xFFFF):
         # switch MSB and LSB of value
         read_buf = bytearray(1)
         write_buf = bytearray(3)
