@@ -52,10 +52,10 @@ class ATM90E26_SPI:
         return (VA,VB,VC)
 
     def get_meter_status(self):
-        s1 = 0
-        s2 = 0
+        sys_status = self.comm_atm90(1, SysStatus)
+        meter_status = self.comm_atm90(1, EnStatus)
 
-        return (s1,s2)
+        return (sys_status, meter_status)
 
 
 if __name__=="__main__":
